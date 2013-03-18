@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "TestNavVC.h"
 
 @implementation AppDelegate
 
@@ -28,7 +29,11 @@
     } else {
         self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil] autorelease];
     }
-    self.window.rootViewController = self.viewController;
+    //self.window.rootViewController = self.viewController;
+    
+    TestNavVC *vc = [[TestNavVC alloc] init];
+    self.window.rootViewController = vc;
+    [vc release];
     [self.window makeKeyAndVisible];
     return YES;
 }
